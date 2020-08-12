@@ -29,9 +29,13 @@ public:
         std::vector<std::string> lines=split(input,'\n');
         std::vector<std::string> chunks;
         for(int i=0;i<(int)lines.size();i++){
-            chunks=split(lines[i],'=');
-            if(chunks.size()==2)
-                M[chunks[0]]=chunks[1];
+            std::string &s=lines[i];
+            for(int j=0;j<s.length();j++){
+                if(s[j]=='='){
+                    M[s.substr(0,j)]=s.substr(j+1,s.length()-j-1);
+                    break;
+                }
+            }
         }
     }
 

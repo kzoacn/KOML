@@ -23,5 +23,6 @@ int main(){
     cout<<koml.getint("prime")<<endl;
     cout<<koml.getstr("author")<<endl;
     cout<<koml.getstr("tip")<<endl;
+    cout<<koml.getstr("base64")<<endl;
     return 0;
 }
